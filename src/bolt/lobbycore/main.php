@@ -12,7 +12,8 @@ use pocketmine\level\Position;
 class LobbyCore extends PluginBase {
   
   public function onEnable() : void{
-		$this->getLogger()->info("The Lobby Core plugin has been enabled. Plugin made by Anonymous Dev1");
+	$this->getLogger()->info("The Lobby Core plugin has been enabled. Plugin made by Anonymous Dev1");
+	$this->saveDefaultConfig();
 	}
   
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
