@@ -12,7 +12,7 @@ use pocketmine\level\Position;
 class LobbyCore extends PluginBase {
   
   public function onEnable() : void{
-	$this->getLogger()->info("The Lobby Core plugin has been enabled. Plugin made by Anonymous Dev1");
+	$this->getLogger()->info("[INFO] The Lobby Core plugin has been enabled. Plugin made by Anonymous Dev!");
 	$this->saveDefaultConfig();
 	}
   
@@ -23,7 +23,7 @@ class LobbyCore extends PluginBase {
                     $this->setLobby($sender->getPosition());
                     $sender->sendMessage("Lobby set!");
                 } else {
-                    $sender->sendMessage("This command can only be run in-game.");
+                    $sender->sendMessage("[WARNING] This command can only be run in-game.");
                 }
                 return true;
             case "hub":
@@ -37,12 +37,12 @@ class LobbyCore extends PluginBase {
                     if ($level !== null) {
                         $position = new Position($x, $y, $z, $level);
                         $sender->teleport($position);
-                        $sender->sendMessage("Teleported to the lobby.");
+                        $sender->sendMessage("[INFO] Teleported to the lobby.");
                     } else {
-                        $sender->sendMessage("The lobby world is not loaded.");
+                        $sender->sendMessage("[WARNING] The lobby world is not loaded.");
                     }
                 } else {
-                    $sender->sendMessage("This command can only be run in-game.");
+                    $sender->sendMessage("[WARNING] This command can only be run in-game.");
                 }
                 return true;
             default:
